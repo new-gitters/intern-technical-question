@@ -15,20 +15,25 @@ function changeDialValue (index, incrementBy) {
   // this will be called with arguments (0, 1) indicating we should raise the first dial's value by one
   // for example, if the user clicked the "down" arrow for the last wheel
   // this will be called with arguments (3, -1).
+   //console.log(index, incrementBy);
     lockState.wheels[index]+=incrementBy;
+    //console.log(index, lockState.wheels[index]);
     var i;
     var flag=true;
     for (i=0;i<lockState.wheels.length;i++)
     {
-      if (lockState.wheels[i]!=SECRET_COMBO[i])
+      if (lockState.wheels[i]!==SECRET_COMBO[i])
       {
         flag=false;
+        break;
       }
     }
+    console.log(flag)
     if (flag)
     {
-      lockState.lockState=true;
-      redirect('Yunhao Shi')
+      lockState.locked=false;
+      //console.log("called")
+      redirect('Yunhao-Shi');
     }
     
 
