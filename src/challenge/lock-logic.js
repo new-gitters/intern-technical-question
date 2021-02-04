@@ -15,6 +15,22 @@ function changeDialValue (index, incrementBy) {
   // this will be called with arguments (0, 1) indicating we should raise the first dial's value by one
   // for example, if the user clicked the "down" arrow for the last wheel
   // this will be called with arguments (3, -1).
+    lockState.wheels[index]+=incrementBy;
+    var i;
+    var flag=true;
+    for (i=0;i<lockState.wheels.length;i++)
+    {
+      if (lockState.wheels[i]!=SECRET_COMBO[i])
+      {
+        flag=false;
+      }
+    }
+    if (flag)
+    {
+      lockState.lockState=true;
+      redirect('Yunhao Shi')
+    }
+    
 
   // to change the state of the lock, simply make a call like
   // lockState.locked = false
