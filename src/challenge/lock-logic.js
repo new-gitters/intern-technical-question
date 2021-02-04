@@ -32,7 +32,6 @@ function changeDialValue (index, incrementBy) {
     if (flag)
     {
       lockState.locked=false;
-      //console.log("called")
       redirect('Yunhao-Shi');
     }
     
