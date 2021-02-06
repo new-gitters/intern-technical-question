@@ -28,7 +28,7 @@ function changeDialValue (index, incrementBy) {
         break;
       }
     }
-    console.log(flag)
+    //console.log(flag)
     if (flag)
     {
       lockState.locked=false;
